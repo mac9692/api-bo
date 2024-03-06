@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.js.apibo.goods.mapper.GoodsBaseTrxMapper">
+    <insert id="insertGoodsBase" parameterType="com.js.apibo.goods.entity.GoodsBase">
+        INSERT INTO GOODS_BASE ( /* GoodsMapper.insertGoodsBase */
+                                  GOODS_NO
+                                , GOODS_NAME
+                                , GOODS_DESC
+                                , SYS_REG_DTM
+                                , SYS_REG_ID
+                                ) VALUES (
+                                  ('G' || NEXTVAL('goodsNo_sequence'))
+                                , #{goodsName}
+                                , #{goodsDesc}
+                                , NOW()
+                                , #{sysRegId}
+                    )
+    </insert>
+</mapper>

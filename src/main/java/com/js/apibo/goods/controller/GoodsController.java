@@ -1,12 +1,10 @@
 package com.js.apibo.goods.controller;
 
+import com.js.apibo.goods.dto.request.GoodsDetailRequest;
 import com.js.apibo.goods.dto.response.GoodsDetailResponse;
 import com.js.apibo.goods.service.GoodsService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,10 @@ public class GoodsController {
     @GetMapping("{goodsNo}")
     public GoodsDetailResponse getGoodsDetail(@PathVariable("goodsNo") String goodsNo) {
         return goodsService.getGoodsDetail(goodsNo);
+    }
+
+    @PostMapping()
+    public Integer registerGoods(@RequestBody GoodsDetailRequest request) {
+        return goodsService.registerGoods(request);
     }
 }

@@ -6,8 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 @Mapper
-public interface GoodsMapper {
-
+public interface GoodsBaseMapper {
     List<GoodsDetailResponse> getGoodsList();
 
     GoodsDetailResponse getGoodsDetail(String goodsNo);
